@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
@@ -48,7 +48,7 @@ export default function App() {
 
   return (
     <CartProvider>
-      <BrowserRouter>
+      <HashRouter>
         <div className="min-h-screen flex flex-col font-sans selection:bg-brand-primary/10 selection:text-brand-primary">
           <ScrollToTop />
           <Navbar onOpenCart={() => setIsCartOpen(true)} />
@@ -60,7 +60,7 @@ export default function App() {
           
           <Footer />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }
